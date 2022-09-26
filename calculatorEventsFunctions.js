@@ -8,14 +8,23 @@ let number1;
 let operator;
 let number2;
 
-numberButtons.forEach(number => {
-    number.addEventListener('click', (e) => {
+numberButtons.forEach(numberBtn => {
+    numberBtn.addEventListener('click', (e) => {
         if (number1 === undefined) {
-            number1 = number.id.toString();
+            number1 = numberBtn.id.toString();
             currentResult.textContent = number1;
-            console.log(number1);
-        } else {
-            number1 += (number.id.toString());
+        } else if (operator !== undefined) {
+            if (number2 === undefined) {
+                number2 = numberBtn.id.toString();
+                currentResult.textContent = number2;
+            }
+            else {
+                number2 += (numberBtn.id.toString());
+                currentResult.textContent = number2;
+            }
+        }
+        else {
+            number1 += (numberBtn.id.toString());
             currentResult.textContent = number1;
         }
     })
