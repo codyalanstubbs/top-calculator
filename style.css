@@ -74,6 +74,14 @@
     color: #01B228;
 }
 
-.operator {
+.operator,
+.dot,
+.negPos {
     color: #FF7575;
+}
+
+.numbers > div:hover,
+.displayFunctions > div:hover,
+.operators > div:hover {
+    background-color: rgb(33, 33, 33);
 }
