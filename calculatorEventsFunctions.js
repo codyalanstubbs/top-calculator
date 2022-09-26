@@ -1,6 +1,9 @@
 const currentResult = document.querySelector('.result');
 const currentCalculation = document.querySelector('.calculation');
-const equals = document.querySelector('#equals');
+const btnEquals = document.querySelector('#equals');
+const btnClearEverything = document.querySelector('#clearEverything');
+const btnClearResult = document.querySelector('#clearResult');
+const btnBackspace = document.querySelector('#backspace');
 const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
 
@@ -45,7 +48,7 @@ operatorButtons.forEach(operatorBtn => {
     })
 })
 
-equals.addEventListener('click', () => {
+btnEquals.addEventListener('click', () => {
     if (operator === undefined || number2 === undefined) {
 
     } else {
@@ -55,4 +58,26 @@ equals.addEventListener('click', () => {
         operator = undefined;
         number2 = undefined;
     }
+})
+
+btnBackspace.addEventListener('click', () => {
+    if (number2 !== undefined) {
+        currentResult.textContent = currentResult.textContent.slice(0, -1);
+        number2 = currentResult.textContent;
+    } else {
+        currentResult.textContent = currentResult.textContent.slice(0, -1);
+        number1 = currentResult.textContent;
+    }
+})
+
+btnClearResult.addEventListener('click', () => {
+    currentResult.textContent = 0;
+})
+
+btnClearEverything.addEventListener('click', () => {
+    currentResult.textContent = 0;
+    currentCalculation.textContent = '';
+    number1 = undefined;
+    operator = undefined;
+    number2 = undefined;
 })
