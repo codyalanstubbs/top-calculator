@@ -52,6 +52,13 @@
     color: goldenrod;
 }
 
+#equals {
+    text-align: center;
+    box-sizing: border-box;
+    width: 100px;
+    border: 1px solid grey;
+}
+
 .number {
     color: #01B228;
 }
