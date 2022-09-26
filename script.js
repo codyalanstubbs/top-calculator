@@ -18,14 +18,14 @@ function divideTwoNumbers(a, b) {
     return a / b;
 }
 
-function operator(number1, number2, operator) {
+function useOperator(number1, number2, operator) {
     if (operator === "+") {
-        addTwoNumbers(number1, number2);
+        return addTwoNumbers(number1, number2);
     } else if (operator === "-") {
-        subtractTwoNumbers(number1, number2);
+        return subtractTwoNumbers(number1, number2);
     } else if (operator === "*") {
-        multiplyTwoNumbers(number1, number2);
+        return multiplyTwoNumbers(number1, number2);
     } else if (operator === "/") {
-        divideTwoNumbers(number1, number2);
+        return divideTwoNumbers(number1, number2);
     } 
 }
