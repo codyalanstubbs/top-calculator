@@ -41,3 +41,8 @@ operatorButtons.forEach(operatorBtn => {
         }
     })
 })
+
+equals.addEventListener('click', () => {
+    currentCalculation.textContent = currentResult.textContent + number2 + ' = ';
+    currentResult.textContent = useOperator(+number1, +number2, operator);
+})
