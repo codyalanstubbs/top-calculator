@@ -46,9 +46,13 @@ operatorButtons.forEach(operatorBtn => {
 })
 
 equals.addEventListener('click', () => {
-    currentCalculation.textContent = currentCalculation.textContent + number2 + ' = ';
-    currentResult.textContent = useOperator(+number1, +number2, operator);
-    number1 = currentResult.textContent;
-    operator = undefined;
-    number2 = undefined;
+    if (operator === undefined || number2 === undefined) {
+
+    } else {
+        currentCalculation.textContent = currentCalculation.textContent + number2 + ' = ';
+        currentResult.textContent = useOperator(+number1, +number2, operator);
+        number1 = currentResult.textContent;
+        operator = undefined;
+        number2 = undefined;
+    }
 })
