@@ -22,8 +22,11 @@ numberButtons.forEach(numberBtn => {
                 number2 += (numberBtn.id.toString());
                 currentResult.textContent = number2;
             }
-        }
-        else {
+        } else if (currentCalculation.textContent !== undefined && currentCalculation.textContent !== '') {
+            number1 = numberBtn.id.toString();
+            currentResult.textContent = number1;
+            currentCalculation.textContent = '';
+        } else {
             number1 += (numberBtn.id.toString());
             currentResult.textContent = number1;
         }
