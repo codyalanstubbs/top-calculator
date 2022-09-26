@@ -12,3 +12,8 @@ function multiplyTwoNumbers(a, b) {
     a = +a, b = +b;
     return a * b;
 }
+
+function divideTwoNumbers(a, b) {
+    a = +a, b = +b;
+    return a / b;
+}
