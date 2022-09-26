@@ -6,6 +6,8 @@ const btnClearResult = document.querySelector('#clearResult');
 const btnBackspace = document.querySelector('#backspace');
 const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
+const negPos = document.querySelector('.negPos');
+const dot = document.querySelector('.dot');
 
 let number1;
 let operator;
@@ -80,4 +82,29 @@ btnClearEverything.addEventListener('click', () => {
     number1 = undefined;
     operator = undefined;
     number2 = undefined;
+})
+
+dot.addEventListener('click', () => {
+    if (currentResult.textContent.includes('.')) {
+
+    } else {
+        if (number2 !== undefined) {
+            currentResult.textContent += ".";
+            number2 = +currentResult.textContent;
+        } else {
+            currentResult.textContent += ".";
+            number1 = +currentResult.textContent;
+        }
+    }
+})
+
+negPos.addEventListener('click', () => {
+
+        if (number2 !== undefined) {
+            number2 = -number2;
+            currentResult.textContent = number2;
+        } else {
+            number1 = -number1;
+            currentResult.textContent = number1;
+        }
 })
